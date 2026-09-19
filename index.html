@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>वैदिक ब्रह्माण्डीय काल-गणना | Vedic Cosmic Time Scale</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-devanagari@latest/devanagari-400-normal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-devanagari@latest/devanagari-700-normal.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cosmic-bg: #050514;
+  --cosmic-deep: #0a0a2e;
+  --nebula-purple: #2d1b69;
+  --nebula-blue: #1e3a8a;
+  --gold: #fbbf24;
+  --gold-light: #fde68a;
+  --gold-dark: #b8860b;
+  --saffron: #ff6b35;
+  --sacred-red: #dc2626;
+  --satya-color: #fbbf24;
+  --treta-color: #94a3b8;
+  --dvapara-color: #b45309;
+  --kali-color: #7c2d12;
+  --text-primary: #f5f5f5;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glow-gold: 0 0 30px rgba(251, 191, 36, 0.3);
+}
+
+body {
+  font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+  background: var(--cosmic-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Cosmic Background */
+.cosmic-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -2;
+  background: 
+    radial-gradient(ellipse at 20% 30%, rgba(45, 27, 105, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(30, 58, 138, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(124, 45, 18, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, #050514 0%, #0a0a2e 50%, #050514 100%);
+}
+
+.stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.om-symbol {
+  font-size: 120px;
+  color: var(--gold);
+  text-shadow: 0 0 60px rgba(251, 191, 36, 0.6), 0 0 120px rgba(251, 191, 36, 0.3);
+  animation: pulse 4s infinite ease-in-out;
+  margin-bottom: 20px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--saffron) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.meta-chip {
+  padding: 10px 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  font-size: 0.9rem;
+  color: var(--gold-light);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  animation: bounce 2s infinite;
+  font-size: 24px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* Section */
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(251, 191, 36, 0.3);
+  box-shadow: 0 8px 32px rgba(251, 191, 36, 0.1);
+}
+
+/* Cosmic Address Tree */
+.address-tree {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.address-node {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(251, 191, 36, 0.02));
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.address-node:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--glow-gold);
+}
+
+.address-node .level {
+  font-size: 0.75rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.address-node .name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+
+.address-node .desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.address-node.current {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(255, 107, 53, 0.1));
+  border-color: var(--gold);
+  box-shadow: var(--glow-gold);
+}
+
+.address-node.current::before {
+  content: '⬤';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: var(--gold);
+  animation: pulse 2s infinite;
+  font-size: 10px;
+}
+
+/* Unit Toggle */
+.unit-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0;
+  padding: 6px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(10px);
+}
+
+.unit-btn {
+  padding: 10px 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.unit-btn.active {
+  background: linear-gradient(135deg, var(--gold), var(--saffron));
+  color: var(--cosmic-bg);
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+}
+
+/* Master Kalpa Scale */
+.kalpa-progress-container {
+  margin-top: 30px;
+}
+
+.kalpa-progress-bar {
+  position: relative;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.kalpa-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    #7c2d12 0%, 
+    #b45309 20%, 
+    #d97706 35%, 
+    #f59e0b 45%, 
+    var(--gold) 45.67%);
+  border-radius: 30px 0 0 30px;
+  position: relative;
+  transition: width 1s ease;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+.kalpa-progress-marker {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  width: 30px;
+  height: 80px;
+  background: var(--gold);
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cosmic-bg);
+  font-weight: 700;
+  font-size: 0.7rem;
+  animation: pulse 2s infinite;
+}
+
+.kalpa-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.kalpa-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card .label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.stat-card .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.stat-card .sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Brahma Age Timeline */
+.brahma-timeline {
+  position: relative;
+  margin: 40px 0;
+  padding: 40px 0;
+}
+
+.brahma-bar {
+  height: 80px;
+  background: linear-gradient(90deg, 
+    rgba(251, 191, 36, 0.3) 0%, 
+    rgba(251, 191, 36, 0.3) 50%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 40px;
+  position: relative;
+  border: 2px solid var(--glass-border);
+  overflow: hidden;
+}
+
+.brahma-bar::before {
+  content: 'प्रथम परार्ध (५० वर्ष)';
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.brahma-bar::after {
+  content: 'द्वितीय परार्ध (५० वर्ष)';
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-muted);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.brahma-marker {
+  position: absolute;
+  top: -15px;
+  left: 50.5%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+}
+
+.brahma-marker .arrow {
+  font-size: 30px;
+  color: var(--saffron);
+  text-shadow: 0 0 15px var(--saffron);
+  animation: bounce 1.5s infinite;
+}
+
+.brahma-marker .label {
+  background: var(--saffron);
+  color: var(--cosmic-bg);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 5px;
+  white-space: nowrap;
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+/* Manvantara Timeline */
+.manvantara-timeline {
+  overflow-x: auto;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.manvantara-track {
+  display: flex;
+  gap: 4px;
+  min-width: max-content;
+  padding: 10px;
+}
+
+.manvantara-segment {
+  flex-shrink: 0;
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(148, 163, 184, 0.1), rgba(148, 163, 184, 0.05));
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 5px;
+}
+
+.manvantara-segment.sandhi {
+  background: linear-gradient(180deg, rgba(124, 45, 18, 0.2), rgba(124, 45, 18, 0.1));
+  border-color: rgba(124, 45, 18, 0.4);
+  width: 40px;
+}
+
+.manvantara-segment:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: var(--glow-gold);
+}
+
+.manvantara-segment.completed {
+  background: linear-gradient(180deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.05));
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.manvantara-segment.current {
+  background: linear-gradient(180deg, rgba(255, 107, 53, 0.3), rgba(251, 191, 36, 0.15));
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.manvantara-segment .num {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.manvantara-segment.current .num {
+  color: var(--saffron);
+}
+
+.manvantara-segment .name {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+.manvantara-segment.sandhi .name {
+  font-size: 0.6rem;
+  color: #b45309;
+}
+
+.manvantara-detail {
+  margin-top: 20px;
+  padding: 25px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  min-height: 120px;
+  transition: all 0.3s ease;
+}
+
+.manvantara-detail h3 {
+  color: var(--gold-light);
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.manvantara-detail p {
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* Chaturyuga */
+.chaturyuga-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .chaturyuga-container { grid-template-columns: 1fr; }
+}
+
+.yuga-circle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.yuga-circle {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  max-width: 100%;
+}
+
+.yuga-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.yuga-circle circle {
+  fill: none;
+  stroke-width: 40;
+  transition: all 0.5s ease;
+}
+
+.yuga-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.yuga-center .title {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.yuga-center .value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin: 5px 0;
+}
+
+.yuga-center .sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.yuga-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.yuga-item {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.yuga-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--yuga-color);
+}
+
+.yuga-item:hover {
+  transform: translateX(5px);
+  border-color: var(--yuga-color);
+}
+
+.yuga-item.active {
+  border-color: var(--yuga-color);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--yuga-color) 40%, transparent);
+}
+
+.yuga-item.completed {
+  opacity: 0.7;
+}
+
+.yuga-item.running {
+  border-color: var(--saffron);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+.yuga-item.running::after {
+  content: 'चलिरहेको';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--saffron);
+  color: var(--cosmic-bg);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  animation: pulse 2s infinite;
+}
+
+.yuga-item .yuga-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.yuga-item .yuga-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--yuga-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cosmic-bg);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.yuga-item .yuga-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.yuga-item .yuga-duration {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.yuga-item .yuga-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.yuga-item .yuga-breakdown {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--glass-border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: none;
+}
+
+.yuga-item.active .yuga-breakdown {
+  display: block;
+}
+
+/* Kali Yuga Live */
+.kali-live {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(124, 45, 18, 0.05));
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.kali-live-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.kali-live-header .live-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--saffron);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--saffron);
+  animation: pulse 1.5s infinite;
+}
+
+.kali-live-header h3 {
+  color: var(--saffron);
+  font-size: 1.3rem;
+}
+
+.kali-progress {
+  height: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 20px 0;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.kali-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: var(--cosmic-bg);
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: width 1s ease;
+}
+
+.kali-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.kali-stat {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+}
+
+.kali-stat .label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.kali-stat .value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+/* Time Scrubber */
+.scrubber-container {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.scrubber-display {
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(255, 107, 53, 0.05));
+  border-radius: 16px;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.scrubber-display .current-time {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.scrubber-display .current-position {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.scrubber-slider {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold) var(--progress, 45.67%), rgba(255, 255, 255, 0.1) var(--progress, 45.67%));
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.scrubber-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background: var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--gold);
+  border: 3px solid var(--cosmic-bg);
+}
+
+.scrubber-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--gold);
+  border: 3px solid var(--cosmic-bg);
+}
+
+.scrubber-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.scrubber-info-item {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+}
+
+.scrubber-info-item .label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.scrubber-info-item .value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+/* Hierarchy Tabs */
+.hierarchy-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--gold), var(--saffron));
+  color: var(--cosmic-bg);
+  font-weight: 700;
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.tab-panel h3 {
+  color: var(--gold-light);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.tab-panel p {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.tab-panel .formula {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 3px solid var(--gold);
+  margin: 15px 0;
+  font-family: monospace;
+  color: var(--gold-light);
+}
+
+/* Calculator */
+.calculator {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(255, 107, 53, 0.05));
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.calc-input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.calc-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.calc-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
+}
+
+.calc-presets {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.preset-btn {
+  padding: 8px 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.preset-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.calc-result {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+  margin-top: 20px;
+}
+
+.calc-result .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.calc-result .value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  word-break: break-all;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+  margin-top: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+}
+
+.cosmic-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--glass-bg);
+}
+
+.cosmic-table th {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(255, 107, 53, 0.08));
+  padding: 14px;
+  text-align: left;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 2px solid rgba(251, 191, 36, 0.3);
+  white-space: nowrap;
+}
+
+.cosmic-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.cosmic-table tr:hover {
+  background: rgba(251, 191, 36, 0.05);
+}
+
+.cosmic-table tr.current-row {
+  background: rgba(255, 107, 53, 0.1);
+  border-left: 3px solid var(--saffron);
+}
+
+.cosmic-table tr.current-row td {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-running {
+  background: rgba(255, 107, 53, 0.2);
+  color: var(--saffron);
+  border: 1px solid rgba(255, 107, 53, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.status-pending {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-muted);
+  border: 1px solid var(--glass-border);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--glass-border);
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+footer .sanskrit {
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .om-symbol { font-size: 80px; }
+  .glass-card { padding: 20px; }
+  .kalpa-progress-bar { height: 50px; }
+  .yuga-circle { width: 260px; height: 260px; }
+  .brahma-bar { height: 60px; }
+  .brahma-bar::before, .brahma-bar::after { font-size: 0.75rem; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--cosmic-deep); }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-dark), var(--saffron)); border-radius: 10px; }
+
+/* Number formatting */
+.num-display {
+  font-variant-numeric: tabular-nums;
+}
+</style>
+</head>
+<body>
+
+<div class="cosmic-bg"></div>
+<div class="stars" id="stars"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="om-symbol">ॐ</div>
+  <h1>वैदिक ब्रह्माण्डीय काल-गणना</h1>
+  <p class="hero-subtitle">
+    ब्रह्माको १०० वर्षको विस्तृत खगोलीय टाइमलाइन — अहोरात्र, कल्प, मन्वन्तर, चतुर्युग र चार युगहरूको पूर्ण संरचना सहित
+  </p>
+  <div class="hero-meta">
+    <div class="meta-chip">१ कल्प = १,००० चतुर्युग</div>
+    <div class="meta-chip">१ देव वर्ष = ३६० सौर्य वर्ष</div>
+    <div class="meta-chip">हाल: ५१ औँ वर्ष • श्वेतवाराह कल्प</div>
+  </div>
+  <div class="scroll-indicator">▼</div>
+</section>
+
+<div class="container">
+
+  <!-- COSMIC ADDRESS -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">ब्रह्माण्डीय ठेगाना (Cosmic Address)</h2>
+      <p class="section-subtitle">हामी ब्रह्माको १०० वर्षको महाकालमा कहाँ छौँ?</p>
+    </div>
+    <div class="address-tree">
+      <div class="address-node">
+        <div class="level">तह १ • वर्ष</div>
+        <div class="name">५१ औँ वर्ष</div>
+        <div class="desc">द्वितीय परार्धको सुरुवात</div>
+      </div>
+      <div class="address-node">
+        <div class="level">तह २ • कल्प (दिन)</div>
+        <div class="name">श्वेतवाराह कल्प</div>
+        <div class="desc">१,००० चतुर्युगको १ दिन</div>
+      </div>
+      <div class="address-node">
+        <div class="level">तह ३ • मन्वन्तर</div>
+        <div class="name">वैवस्वत मन्वन्तर</div>
+        <div class="desc">७ औँ मनुको शासनकाल</div>
+      </div>
+      <div class="address-node">
+        <div class="level">तह ४ • चतुर्युग</div>
+        <div class="name">२८ औँ चतुर्युग</div>
+        <div class="desc">७१ मध्ये २८ औँ चक्र</div>
+      </div>
+      <div class="address-node current">
+        <div class="level">तह ५ • वर्तमान युग</div>
+        <div class="name">कलियुग</div>
+        <div class="desc">~५,१२७ मानव वर्ष बितेको</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIT TOGGLE -->
+  <div class="unit-toggle">
+    <button class="unit-btn active" data-unit="dev" onclick="setUnit('dev')">देव वर्ष</button>
+    <button class="unit-btn" data-unit="human" onclick="setUnit('human')">मानव वर्ष</button>
+  </div>
+
+  <!-- MASTER KALPA SCALE -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">मास्टर कल्प स्केल</h2>
+      <p class="section-subtitle">श्वेतवाराह कल्प (१,२०,००,००० देव वर्ष) भित्र हाम्रो वर्तमान स्थिति</p>
+    </div>
+    <div class="glass-card">
+      <div class="kalpa-progress-container">
+        <div class="kalpa-progress-bar">
+          <div class="kalpa-progress-fill" style="width: 45.67%">
+            <div class="kalpa-progress-marker">हामी</div>
+          </div>
+        </div>
+        <div class="kalpa-labels">
+          <span>०% (कल्प आरम्भ)</span>
+          <span>२५%</span>
+          <span>४५.६७% (वर्तमान)</span>
+          <span>५०% (मध्याह्न)</span>
+          <span>७५%</span>
+          <span>१००% (कल्पान्त)</span>
+        </div>
+      </div>
+      <div class="kalpa-stats">
+        <div class="stat-card">
+          <div class="label">कुल कल्प अवधि</div>
+          <div class="value num-display" data-dev="1,20,00,000" data-human="४,३२,००,००,०००">१,२०,००,०००</div>
+          <div class="sub">देव वर्ष</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">बितेको समय</div>
+          <div class="value num-display" data-dev="54,79,814.24" data-human="१,९७,२७,३३,१२६">५४,७९,८१४.२४</div>
+          <div class="sub">देव वर्ष (४५.६७%)</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">बाँकी अवधि</div>
+          <div class="value num-display" data-dev="65,20,185.76" data-human="२,३४,७२,६६,८७४">६५,२०,१८५.७६</div>
+          <div class="sub">देव वर्ष (५४.३३%)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAHMA AGE TIMELINE -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">ब्रह्माको १०० वर्षको टाइमलाइन</h2>
+      <p class="section-subtitle">१ परार्ध = ५० वर्ष = १५,५५,२०,००,००,००,००० मानव वर्ष</p>
+    </div>
+    <div class="glass-card">
+      <div class="brahma-timeline">
+        <div class="brahma-bar"></div>
+        <div class="brahma-marker">
+          <div class="arrow">▼</div>
+          <div class="label">हामी यहाँ (५१ औँ वर्ष)</div>
+        </div>
+      </div>
+      <div class="kalpa-stats">
+        <div class="stat-card">
+          <div class="label">प्रथम परार्ध</div>
+          <div class="value">समाप्त</div>
+          <div class="sub">पहिलो ५० वर्ष (१८,००० कल्प)</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">द्वितीय परार्ध</div>
+          <div class="value" style="color: var(--saffron);">चलिरहेको</div>
+          <div class="sub">५१ औँ वर्ष — श्वेतवाराह कल्प</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">ब्रह्माको कुल आयु</div>
+          <div class="value">१०० वर्ष</div>
+          <div class="sub">अन्त्यमा महाप्रलय</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 MANVANTARAS -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">१४ मन्वन्तर र १५ सन्धिकाल</h2>
+      <p class="section-subtitle">१ कल्प = १४ मन्वन्तर (९९४ चतुर्युग) + १५ सन्धिकाल (६ चतुर्युग) = १,००० चतुर्युग</p>
+    </div>
+    <div class="glass-card">
+      <div class="manvantara-timeline">
+        <div class="manvantara-track" id="manvantaraTrack"></div>
+      </div>
+      <div class="manvantara-detail" id="manvantaraDetail">
+        <h3>कुनै पनि खण्डमा क्लिक गरी विवरण हेर्नुहोस्</h3>
+        <p>माथिको टाइमलाइनमा १४ मन्वन्तर र १५ सन्धिकालहरू देखाइएका छन्। हामी ७ औँ वैवस्वत मन्वन्तरमा छौँ।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 28TH CHATURYUGA -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">२८ औँ चतुर्युग — चार युगहरू</h2>
+      <p class="section-subtitle">१ चतुर्युग = १२,००० देव वर्ष = ४,३२,००,००० मानव वर्ष</p>
+    </div>
+    <div class="glass-card">
+      <div class="chaturyuga-container">
+        <div class="yuga-circle-wrap">
+          <div class="yuga-circle">
+            <svg viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="80" stroke="#7c2d12" stroke-dasharray="502.4" stroke-dashoffset="0"></circle>
+              <circle cx="100" cy="100" r="80" stroke="#b45309" stroke-dasharray="502.4" stroke-dashoffset="50.24"></circle>
+              <circle cx="100" cy="100" r="80" stroke="#94a3b8" stroke-dasharray="502.4" stroke-dashoffset="150.72"></circle>
+              <circle cx="100" cy="100" r="80" stroke="#fbbf24" stroke-dasharray="502.4" stroke-dashoffset="251.2"></circle>
+            </svg>
+            <div class="yuga-center">
+              <div class="title">२८ औँ चतुर्युग</div>
+              <div class="value">९०.१२%</div>
+              <div class="sub">पूरा भइसकेको</div>
+            </div>
+          </div>
+        </div>
+        <div class="yuga-list" id="yugaList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KALI YUGA LIVE -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">कलियुगको प्रत्यक्ष स्थिति</h2>
+      <p class="section-subtitle">कलियुग सुरुवात: इ.सं.पूर्व ३१०२ (3102 BCE)</p>
+    </div>
+    <div class="kali-live">
+      <div class="kali-live-header">
+        <div class="live-dot"></div>
+        <h3>LIVE — कलियुग प्रथम चरण (सन्ध्या काल)</h3>
+      </div>
+      <div class="kali-progress">
+        <div class="kali-progress-fill" style="width: 1.19%">१.१९%</div>
+      </div>
+      <div class="kali-stats">
+        <div class="kali-stat">
+          <div class="label">बितेको समय</div>
+          <div class="value">~५,१२७ मानव वर्ष</div>
+        </div>
+        <div class="kali-stat">
+          <div class="label">बाँकी समय</div>
+          <div class="value">~४,२६,८७३ मानव वर्ष</div>
+        </div>
+        <div class="kali-stat">
+          <div class="label">देव वर्षमा</div>
+          <div class="value">१४.२४ / १,२००</div>
+        </div>
+        <div class="kali-stat">
+          <div class="label">वर्तमान चरण</div>
+          <div class="value" style="color: var(--saffron);">सन्ध्या (प्रथम १०%)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIME SCRUBBER -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">इन्टरएक्टिभ कल्प समय खोजकर्ता</h2>
+      <p class="section-subtitle">स्लाइडर सारेर कल्पको जुनसुकै समयमा के हुन्छ र कुन मन्वन्तर पर्छ हेर्नुहोस्</p>
+    </div>
+    <div class="scrubber-container">
+      <div class="scrubber-display">
+        <div class="current-time" id="scrubberTime">५४,७९,८१४ देव वर्ष</div>
+        <div class="current-position" id="scrubberPosition">हालको वास्तविक स्थिति (४५.६७%)</div>
+      </div>
+      <input type="range" min="0" max="12000000" value="5479814" step="1000" class="scrubber-slider" id="scrubberSlider" style="--progress: 45.67%">
+      <div class="scrubber-info" id="scrubberInfo"></div>
+    </div>
+  </section>
+
+  <!-- HIERARCHY TABS -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">वैदिक समय चक्रको तहगत संरचना</h2>
+      <p class="section-subtitle">प्रत्येक तहको विस्तृत व्याख्या र गणितीय सम्बन्ध</p>
+    </div>
+    <div class="hierarchy-tabs">
+      <button class="tab-btn active" onclick="switchTab(0)">१. अहोरात्र</button>
+      <button class="tab-btn" onclick="switchTab(1)">२. कल्प</button>
+      <button class="tab-btn" onclick="switchTab(2)">३. मन्वन्तर</button>
+      <button class="tab-btn" onclick="switchTab(3)">४. चतुर्युग</button>
+      <button class="tab-btn" onclick="switchTab(4)">५. चार युगहरू</button>
+    </div>
+
+    <div class="tab-content active">
+      <div class="tab-panel">
+        <h3>अहोरात्र (ब्रह्माको दिन र रात)</h3>
+        <p>ब्रह्माको एक दिन (कल्प) र एक रात बराबर हुन्छ — प्रत्येक ४.३२ अर्ब मानव वर्ष। दिनको अन्त्यमा ब्रह्मा सुत्ने (प्रलय) र बिहान फेरि ब्रह्माण्डको सृष्टि हुन्छ।</p>
+        <div class="formula">१ अहोरात्र = १ दिन (कल्प) + १ रात = ८,६४,००,००० मानव वर्ष</div>
+        <p>३० अहोरात्र = १ ब्रह्मा महिना<br>१२ महिना = १ ब्रह्मा वर्ष (३,११,०४,००,००,००० मानव वर्ष)<br>ब्रह्माको कुल आयु = १०० वर्ष</p>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-panel">
+        <h3>कल्प (ब्रह्माको १ दिन)</h3>
+        <p>एउटा कल्प ब्रह्माको एक दिन बराबर हो। यसमा १,००० चतुर्युग हुन्छन्, जुन १४ मन्वन्तर र १५ सन्धिकालमा विभाजित हुन्छन्।</p>
+        <div class="formula">१ कल्प = १,२०,००,००० देव वर्ष = ४,३२,००,००,००० मानव वर्ष</div>
+        <p><strong>गणना:</strong><br>
+        १४ मन्वन्तर × ७१ चतुर्युग = ९९४ चतुर्युग<br>
+        १५ सन्धिकाल × ४,८०० देव वर्ष = ७२,००० देव वर्ष (६ चतुर्युग)<br>
+        जम्मा = ९९४ + ६ = १,००० चतुर्युग</p>
+        <p>हाल <strong>श्वेतवाराह कल्प</strong> — ब्रह्माको ५१ औँ वर्षको पहिलो दिन (द्वितीय परार्धको सुरुवात)।</p>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-panel">
+        <h3>मन्वन्तर (मनुको शासनकाल)</h3>
+        <p>प्रत्येक मन्वन्तरमा एउटा मनु (मानवजातिका पिता), इन्द्र, र सप्तर्षिहरूको शासन हुन्छ। १ कल्पमा १४ मन्वन्तर हुन्छन्।</p>
+        <div class="formula">१ मन्वन्तर = ७१ चतुर्युग = ८,५२,००० देव वर्ष = ३०,६७,२०,००० मानव वर्ष</div>
+        <p><strong>१४ मनुहरू:</strong><br>
+        १. स्वायम्भुव, २. स्वारोचिष, ३. उत्तम, ४. तामस, ५. रैवत, ६. चाक्षुष,<br>
+        <strong style="color: var(--saffron);">७. वैवस्वत (वर्तमान)</strong>,<br>
+        ८. सावर्णि, ९. दक्ष-सावर्णि, १०. ब्रह्म-सावर्णि, ११. धर्म-सावर्णि, १२. रुद्र-सावर्णि, १३. देव-सावर्णि, १४. इन्द्र-सावर्णि</p>
+        <p>प्रत्येक मन्वन्तरको अगाडि र पछाडि <strong>सन्धिकाल</strong> (जलप्रलय) हुन्छ — १ सत्ययुग बराबर (४,८०० देव वर्ष)।</p>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-panel">
+        <h3>चतुर्युग (महायुग)</h3>
+        <p>चार युगहरूको चक्र — सत्य, त्रेता, द्वापर, र कलि। प्रत्येक युगमा सन्ध्या (प्रारम्भिक सन्धि), मुख्य काल, र सन्ध्यांश (अन्तिम सन्धि) हुन्छ।</p>
+        <div class="formula">१ चतुर्युग = ४,८०० + ३,६०० + २,४०० + १,२०० = १२,००० देव वर्ष = ४,३२,००,००० मानव वर्ष</div>
+        <p>अनुपात: ४ : ३ : २ : १ (सत्य : त्रेता : द्वापर : कलि)<br>
+        प्रत्येक युगको सन्ध्या/सन्ध्यांश त्यस युगको १०%-१०% (कुल २०%) हुन्छ।</p>
+        <p>हाल <strong>२८ औँ चतुर्युग</strong> चलिरहेको छ — २७ पूरा भइसके, ४३ बाँकी।</p>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-panel">
+        <h3>चार युगहरूको विस्तृत विवरण</h3>
+        
+        <h4 style="color: var(--satya-color); margin-top: 20px;">🌟 १. सत्ययुग (कृत युग) — गोल्डेन युग</h4>
+        <p>धर्म ४ पाऊ। सत्य, तप, पवित्रता र दयाको पूर्ण समय। मानव आयु १,००,००० वर्ष।</p>
+        <div class="formula">कुल: ४,८०० देव वर्ष = १७,२८,००० मानव वर्ष<br>सन्ध्या: ४०० + मुख्य: ४,००० + सन्ध्यांश: ४००</div>
+
+        <h4 style="color: var(--treta-color); margin-top: 20px;">🌙 २. त्रेतायुग — सिल्भर युग</h4>
+        <p>धर्म ३ पाऊ। भगवान् श्री रामको अवतार, यज्ञ र कर्मको प्राधान्यता। मानव आयु १०,००० वर्ष।</p>
+        <div class="formula">कुल: ३,६०० देव वर्ष = १२,९६,००० मानव वर्ष<br>सन्ध्या: ३०० + मुख्य: ३,००० + सन्ध्यांश: ३००</div>
+
+        <h4 style="color: #cd7f32; margin-top: 20px;">🔶 ३. द्वापरयुग — कांस्य युग</h4>
+        <p>धर्म २ पाऊ। भगवान् श्री कृष्णको अवतार र वेद व्यासद्वारा वेद विभाजन। मानव आयु १,००० वर्ष।</p>
+        <div class="formula">कुल: २,४०० देव वर्ष = ८,६४,००० मानव वर्ष<br>सन्ध्या: २०० + मुख्य: २,००० + सन्ध्यांश: २००</div>
+
+        <h4 style="color: var(--saffron); margin-top: 20px;">⚔️ ४. कलियुग — फलाम युग (वर्तमान)</h4>
+        <p>धर्म १ पाऊ। अधर्म, द्वन्द्व, र अज्ञानको वृद्धि। मानव आयु १०० वर्षसम्म घट्छ।</p>
+        <div class="formula">कुल: १,२०० देव वर्ष = ४,३२,००० मानव वर्ष<br>सन्ध्या: १०० + मुख्य: १,००० + सन्ध्यांश: १००</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">देव वर्ष ↔ मानव वर्ष क्याल्कुलेटर</h2>
+      <p class="section-subtitle">१ देव वर्ष = ३६० मानव (सौर्य) वर्ष</p>
+    </div>
+    <div class="calculator">
+      <div class="calc-input-group">
+        <input type="number" class="calc-input" id="devInput" placeholder="देव वर्ष हाल्नुहोस्" value="120000">
+        <input type="number" class="calc-input" id="humanInput" placeholder="मानव वर्ष हाल्नुहोस्" value="43200000">
+      </div>
+      <div class="calc-presets">
+        <button class="preset-btn" onclick="setPreset(1200, 432000)">कलियुग (१,२००)</button>
+        <button class="preset-btn" onclick="setPreset(12000, 4320000)">१ चतुर्युग (१२,०००)</button>
+        <button class="preset-btn" onclick="setPreset(852000, 306720000)">१ मन्वन्तर (८,५२,०००)</button>
+        <button class="preset-btn" onclick="setPreset(12000000, 4320000000)">१ कल्प (१,२०,००,०००)</button>
+      </div>
+      <div class="calc-result">
+        <div class="label" id="calcLabel">रूपान्तरण नतिजा</div>
+        <div class="value" id="calcValue">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLETE TABLE -->
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">श्वेतवाराह कल्पको पूर्ण तालिका</h2>
+      <p class="section-subtitle">१५ सन्धिकाल र १४ मन्वन्तरहरूको क्रमबद्ध सूची</p>
+    </div>
+    <div class="table-container">
+      <table class="cosmic-table" id="fullTable"></table>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="sanskrit">ॐ भूर्भुवः स्वः — तत्सवितुर्वरेण्यम्</div>
+  <p>वैदिक काल-गणना प्रणाली — सूर्य सिद्धान्त, श्रीमद्भागवत पुराण (३.११), विष्णु पुराण र मनुस्मृतिमा आधारित</p>
+  <p style="margin-top: 10px;">© २०२६ वैदिक खगोलशास्त्र अध्ययन | १ देव वर्ष = ३६० सौर्य वर्ष | १ कल्प = ४.३२ अर्ब सौर्य वर्ष</p>
+</footer>
+
+<script>
+// ============ STARS ============
+function createStars() {
+  const container = document.getElementById('stars');
+  const count = 150;
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 2 + 0.5;
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.opacity = Math.random() * 0.7 + 0.3;
+    container.appendChild(star);
+  }
+}
+createStars();
+
+// ============ UNIT TOGGLE ============
+let currentUnit = 'dev';
+function setUnit(unit) {
+  currentUnit = unit;
+  document.querySelectorAll('.unit-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.unit === unit);
+  });
+  document.querySelectorAll('[data-dev]').forEach(el => {
+    el.textContent = el.dataset[unit];
+  });
+  document.querySelectorAll('.stat-card .sub').forEach(sub => {
+    const card = sub.closest('.stat-card');
+    if (card) {
+      const val = card.querySelector('.value');
+      if (val && val.dataset.dev) {
+        sub.textContent = unit === 'dev' ? 'देव वर्ष' : 'मानव वर्ष';
+      }
+    }
+  });
+}
+
+// ============ MANVANTARA DATA ============
+const manvantaras = [
+  { num: 1, name: 'स्वायम्भुव', status: 'completed', desc: 'पहिलो मनु — स्वायम्भुव मनुको शासनकाल।', devYears: 852000 },
+  { num: 2, name: 'स्वारोचिष', status: 'completed', desc: 'दोस्रो मनु — स्वारोचिष मनुको शासनकाल।', devYears: 852000 },
+  { num: 3, name: 'उत्तम', status: 'completed', desc: 'तेस्रो मनु — उत्तम मनुको शासनकाल।', devYears: 852000 },
+  { num: 4, name: 'तामस', status: 'completed', desc: 'चौथो मनु — तामस मनुको शासनकाल।', devYears: 852000 },
+  { num: 5, name: 'रैवत', status: 'completed', desc: 'पाँचौं मनु — रैवत मनुको शासनकाल।', devYears: 852000 },
+  { num: 6, name: 'चाक्षुष', status: 'completed', desc: 'छैटौं मनु — चाक्षुष मनुको शासनकाल।', devYears: 852000 },
+  { num: 7, name: 'वैवस्वत', status: 'current', desc: 'सातौं मनु — सूर्यपुत्र वैवस्वत मनुको शासनकाल। हाल २८ औँ चतुर्युग चलिरहेको छ।', devYears: 852000 },
+  { num: 8, name: 'सावर्णि', status: 'pending', desc: 'आठौं मनु — भविष्यको मन्वन्तर।', devYears: 852000 },
+  { num: 9, name: 'दक्ष-सावर्णि', status: 'pending', desc: 'नवौं मनु — भविष्यको मन्वन्तर।', devYears: 852000 },
+  { num: 10, name: 'ब्रह्म-सावर्णि', status: 'pending', desc: 'दशौं मनु — भविष्यको मन्वन्तर।', devYears: 852000 },
+  { num: 11, name: 'धर्म-सावर्णि', status: 'pending', desc: 'एघारौं मनु — भविष्यको मन्वन्तर।', devYears: 852000 },
+  { num: 12, name: 'रुद्र-सावर्णि', status: 'pending', desc: 'बाह्रौं मनु — भविष्यको मन्वन्तर।', devYears: 852000 },
+  { num: 13, name: 'देव-सावर्णि', status: 'pending', desc: 'तेह्रौं मनु — भविष्यको मन्वन्तर।', devYears: 852000 },
+  { num: 14, name: 'इन्द्र-सावर्णि', status: 'pending', desc: 'चौधौं मनु — अन्तिम मन्वन्तर।', devYears: 852000 }
+];
+
+function buildManvantaraTrack() {
+  const track = document.getElementById('manvantaraTrack');
+  track.innerHTML = '';
+  
+  // Initial sandhi
+  addSegment(track, 'sandhi', 'सन्धि', 0, 'कल्प प्रारम्भिक सन्धिकाल (जलप्रलय)');
+  
+  manvantaras.forEach((m, idx) => {
+    const div = document.createElement('div');
+    div.className = `manvantara-segment ${m.status}`;
+    div.innerHTML = `<div class="num">${toDevanagariNum(m.num)}</div><div class="name">${m.name}</div>`;
+    div.onclick = () => showManvantaraDetail(m);
+    track.appendChild(div);
+    
+    // Sandhi after (except last one - final sandhi)
+    if (idx < 13) {
+      addSegment(track, 'sandhi', 'सन्धि', idx + 1, `मन्वन्तर सन्धिकाल ${idx + 1}`);
+    }
+  });
+  
+  // Final sandhi
+  addSegment(track, 'sandhi', 'अन्तिम', 15, 'कल्प अन्तिम सन्धिकाल (प्रलय)');
+}
+
+function addSegment(track, type, label, num, desc) {
+  const div = document.createElement('div');
+  div.className = `manvantara-segment ${type}`;
+  div.innerHTML = `<div class="num">•</div><div class="name">${label}</div>`;
+  div.onclick = () => showSandhiDetail(num, desc);
+  track.appendChild(div);
+}
+
+function showManvantaraDetail(m) {
+  const detail = document.getElementById('manvantaraDetail');
+  const statusText = m.status === 'completed' ? 'समाप्त' : m.status === 'current' ? 'चलिरहेको' : 'आगामी';
+  detail.innerHTML = `
+    <h3>${toDevanagariNum(m.num)}. ${m.name} मन्वन्तर</h3>
+    <p>${m.desc}</p>
+    <p><strong>अवधि:</strong> ७१ चतुर्युग = ८,५२,००० देव वर्ष = ३०,६७,२०,००० मानव वर्ष</p>
+    <p><strong>अवस्था:</strong> <span class="status-badge status-${m.status === 'completed' ? 'completed' : m.status === 'current' ? 'running' : 'pending'}">${statusText}</span></p>
+  `;
+}
+
+function showSandhiDetail(num, desc) {
+  const detail = document.getElementById('manvantaraDetail');
+  detail.innerHTML = `
+    <h3>सन्धिकाल ${num > 0 ? toDevanagariNum(num) : '(प्रारम्भिक)'}</h3>
+    <p>${desc}</p>
+    <p><strong>अवधि:</strong> १ सत्ययुग बराबर = ४,८०० देव वर्ष = १,७२,८०,००० मानव वर्ष</p>
+    <p>सन्धिकालमा जलप्रलय हुन्छ — तीनै लोक जलमा डुब्छन्।</p>
+  `;
+}
+
+buildManvantaraTrack();
+
+// ============ YUGA LIST ============
+const yugas = [
+  { name: 'सत्ययुग', english: 'Satya Yuga', duration: 4800, humanDuration: 17280000, percent: 40, color: 'var(--satya-color)', icon: '🌟', status: 'completed', desc: 'गोल्डेन युग (धर्म ४ पाऊ) — सत्य, तप, पवित्रता र दयाको पूर्ण समय।', breakdown: 'सन्ध्या: ४०० + मुख्य: ४,००० + सन्ध्यांश: ४००' },
+  { name: 'त्रेतायुग', english: 'Treta Yuga', duration: 3600, humanDuration: 12960000, percent: 30, color: 'var(--treta-color)', icon: '🌙', status: 'completed', desc: 'सिल्भर युग (धर्म ३ पाऊ) — भगवान् श्री रामको अवतार, यज्ञ र कर्मको प्राधान्यता।', breakdown: 'सन्ध्या: ३०० + मुख्य: ३,००० + सन्ध्यांश: ३००' },
+  { name: 'द्वापरयुग', english: 'Dvapara Yuga', duration: 2400, humanDuration: 8640000, percent: 20, color: '#cd7f32', icon: '🔶', status: 'completed', desc: 'कांस्य युग (धर्म २ पाऊ) — भगवान् श्री कृष्णको अवतार र वेद व्यासद्वारा विभाजन।', breakdown: 'सन्ध्या: २०० + मुख्य: २,००० + सन्ध्यांश: २००' },
+  { name: 'कलियुग', english: 'Kali Yuga', duration: 1200, humanDuration: 4320000, percent: 10, color: 'var(--saffron)', icon: '⚔️', status: 'running', desc: 'फलाम युग (धर्म १ पाऊ) — वर्तमान समय। अधर्म र द्वन्द्वको वृद्धि।', breakdown: 'सन्ध्या: १०० + मुख्य: १,००० + सन्ध्यांश: १००' }
+];
+
+function buildYugaList() {
+  const list = document.getElementById('yugaList');
+  list.innerHTML = '';
+  yugas.forEach((y, idx) => {
+    const item = document.createElement('div');
+    item.className = `yuga-item ${y.status}`;
+    item.style.setProperty('--yuga-color', y.color);
+    item.innerHTML = `
+      <div class="yuga-header">
+        <div class="yuga-icon" style="background: ${y.color}">${y.icon}</div>
+        <div>
+          <div class="yuga-name">${y.name}</div>
+          <div class="yuga-duration">${toDevanagariNum(y.duration)} देव वर्ष • ${y.percent}%</div>
+        </div>
+      </div>
+      <div class="yuga-desc">${y.desc}</div>
+      <div class="yuga-breakdown">
+        <strong>सन्ध्या/सन्ध्यांश विभाजन:</strong> ${y.breakdown} देव वर्ष
+      </div>
+    `;
+    item.onclick = () => {
+      document.querySelectorAll('.yuga-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    };
+    list.appendChild(item);
+  });
+}
+buildYugaList();
+
+// ============ TIME SCRUBBER ============
+const scrubber = document.getElementById('scrubberSlider');
+const scrubberTime = document.getElementById('scrubberTime');
+const scrubberPosition = document.getElementById('scrubberPosition');
+const scrubberInfo = document.getElementById('scrubberInfo');
+
+function formatDevYears(n) {
+  const str = Math.floor(n).toString();
+  let result = '';
+  let count = 0;
+  for (let i = str.length - 1; i >= 0; i--) {
+    if (count === 3 || (count > 3 && count % 2 === 1)) {
+      result = ',' + result;
+    }
+    result = str[i] + result;
+    count++;
+  }
+  return result;
+}
+
+function toDevanagariNum(n) {
+  const devDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+  return n.toString().replace(/\d/g, d => devDigits[d]);
+}
+
+function getPositionAt(devYears) {
+  const totalKalpa = 12000000;
+  const sandhiDuration = 4800;
+  const manvantaraDuration = 852000;
+  
+  let elapsed = 0;
+  let manvantaraNum = 0;
+  let inSandhi = false;
+  let sandhiNum = 0;
+  
+  // Initial sandhi
+  if (devYears < sandhiDuration) {
+    return { manvantara: 0, sandhi: 1, inSandhi: true, positionInSegment: devYears / sandhiDuration };
+  }
+  elapsed = sandhiDuration;
+  
+  for (let i = 0; i < 14; i++) {
+    if (devYears < elapsed + manvantaraDuration) {
+      return { 
+        manvantara: i + 1, 
+        sandhi: 0, 
+        inSandhi: false, 
+        positionInSegment: (devYears - elapsed) / manvantaraDuration,
+        chaturyuga: Math.floor((devYears - elapsed) / 12000) + 1
+      };
+    }
+    elapsed += manvantaraDuration;
+    
+    if (devYears < elapsed + sandhiDuration) {
+      return { manvantara: i + 1, sandhi: i + 2, inSandhi: true, positionInSegment: (devYears - elapsed) / sandhiDuration };
+    }
+    elapsed += sandhiDuration;
+  }
+  
+  return { manvantara: 14, sandhi: 15, inSandhi: true, positionInSegment: 1 };
+}
+
+function updateScrubber() {
+  const val = parseInt(scrubber.value);
+  const percent = (val / 12000000) * 100;
+  scrubber.style.setProperty('--progress', percent + '%');
+  
+  scrubberTime.textContent = formatDevYears(val) + ' देव वर्ष';
+  scrubberPosition.textContent = `कल्पको ${percent.toFixed(2)}% पूरा`;
+  
+  const pos = getPositionAt(val);
+  let infoHtml = '';
+  
+  if (pos.inSandhi) {
+    infoHtml = `
+      <div class="scrubber-info-item">
+        <div class="label">वर्तमान खण्ड</div>
+        <div class="value">सन्धिकाल ${toDevanagariNum(pos.sandhi)}</div>
+      </div>
+      <div class="scrubber-info-item">
+        <div class="label">प्रकार</div>
+        <div class="value" style="color: #b45309;">जलप्रलय</div>
+      </div>
+      <div class="scrubber-info-item">
+        <div class="label">अवधि</div>
+        <div class="value">४,८०० देव वर्ष</div>
+      </div>
+      <div class="scrubber-info-item">
+        <div class="label">खण्डमा प्रगति</div>
+        <div class="value">${(pos.positionInSegment * 100).toFixed(1)}%</div>
+      </div>
+    `;
+  } else {
+    const m = manvantaras[pos.manvantara - 1];
+    infoHtml = `
+      <div class="scrubber-info-item">
+        <div class="label">मन्वन्तर</div>
+        <div class="value">${toDevanagariNum(pos.manvantara)}. ${m ? m.name : ''}</div>
+      </div>
+      <div class="scrubber-info-item">
+        <div class="label">चतुर्युग</div>
+        <div class="value">${toDevanagariNum(pos.chaturyuga)} / ७१</div>
+      </div>
+      <div class="scrubber-info-item">
+        <div class="label">मन्वन्तरमा प्रगति</div>
+        <div class="value">${(pos.positionInSegment * 100).toFixed(1)}%</div>
+      </div>
+      <div class="scrubber-info-item">
+        <div class="label">मनु</div>
+        <div class="value">${m ? m.name : ''}</div>
+      </div>
+    `;
+  }
+  
+  scrubberInfo.innerHTML = infoHtml;
+}
+
+scrubber.addEventListener('input', updateScrubber);
+updateScrubber();
+
+// ============ TABS ============
+function switchTab(idx) {
+  document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', i === idx);
+  });
+  document.querySelectorAll('.tab-content').forEach((content, i) => {
+    content.classList.toggle('active', i === idx);
+  });
+}
+
+// ============ CALCULATOR ============
+const devInput = document.getElementById('devInput');
+const humanInput = document.getElementById('humanInput');
+const calcValue = document.getElementById('calcValue');
+const calcLabel = document.getElementById('calcLabel');
+
+function updateCalcFromDev() {
+  const dev = parseFloat(devInput.value);
+  if (isNaN(dev)) return;
+  const human = dev * 360;
+  humanInput.value = human;
+  calcLabel.textContent = `${formatDevYears(dev)} देव वर्ष बराबर`;
+  calcValue.textContent = formatDevYears(human) + ' मानव वर्ष';
+}
+
+function updateCalcFromHuman() {
+  const human = parseFloat(humanInput.value);
+  if (isNaN(human)) return;
+  const dev = human / 360;
+  devInput.value = dev;
+  calcLabel.textContent = `${formatDevYears(human)} मानव वर्ष बराबर`;
+  calcValue.textContent = formatDevYears(dev) + ' देव वर्ष';
+}
+
+devInput.addEventListener('input', updateCalcFromDev);
+humanInput.addEventListener('input', updateCalcFromHuman);
+
+function setPreset(dev, human) {
+  devInput.value = dev;
+  humanInput.value = human;
+  updateCalcFromDev();
+}
+
+updateCalcFromDev();
+
+// ============ FULL TABLE ============
+function buildTable() {
+  const table = document.getElementById('fullTable');
+  let rows = [];
+  
+  // Initial sandhi
+  rows.push({
+    num: 1,
+    name: 'कल्प प्रारम्भिक सन्धिकाल',
+    type: 'सन्धिकाल',
+    devYears: 4800,
+    humanYears: 17280000,
+    status: 'completed'
+  });
+  
+  manvantaras.forEach((m, idx) => {
+    rows.push({
+      num: rows.length + 1,
+      name: `${toDevanagariNum(m.num)}. ${m.name} मन्वन्तर`,
+      type: 'मन्वन्तर',
+      devYears: 852000,
+      humanYears: 306720000,
+      status: m.status,
+      desc: m.desc
+    });
+    
+    if (idx < 13) {
+      rows.push({
+        num: rows.length + 1,
+        name: `मन्वन्तर सन्धिकाल ${toDevanagariNum(idx + 2)}`,
+        type: 'सन्धिकाल',
+        devYears: 4800,
+        humanYears: 17280000,
+        status: idx < 6 ? 'completed' : idx === 6 ? 'completed' : 'pending'
+      });
+    }
+  });
+  
+  // Final sandhi
+  rows.push({
+    num: rows.length + 1,
+    name: 'कल्प अन्तिम सन्धिकाल',
+    type: 'सन्धिकाल',
+    devYears: 4800,
+    humanYears: 17280000,
+    status: 'pending'
+  });
+  
+  let html = `
+    <thead>
+      <tr>
+        <th>क्र.सं.</th>
+        <th>खण्डको नाम</th>
+        <th>प्रकार</th>
+        <th>अवधि (देव वर्ष)</th>
+        <th>अवधि (मानव वर्ष)</th>
+        <th>अवस्था</th>
+      </tr>
+    </thead>
+    <tbody>
+  `;
+  
+  rows.forEach(r => {
+    const statusClass = r.status === 'completed' ? 'status-completed' : r.status === 'current' ? 'status-running' : 'status-pending';
+    const statusText = r.status === 'completed' ? 'समाप्त' : r.status === 'current' ? 'चलिरहेको' : 'आगामी';
+    const rowClass = r.status === 'current' ? 'current-row' : '';
+    html += `
+      <tr class="${rowClass}">
+        <td>${toDevanagariNum(r.num)}</td>
+        <td>${r.name}</td>
+        <td>${r.type}</td>
+        <td class="num-display">${formatDevYears(r.devYears)}</td>
+        <td class="num-display">${formatDevYears(r.humanYears)}</td>
+        <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+      </tr>
+    `;
+  });
+  
+  html += '</tbody>';
+  table.innerHTML = html;
+}
+buildTable();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
