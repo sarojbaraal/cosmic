@@ -173,12 +173,14 @@ footer{padding:40px 20px; text-align:center; color:var(--muted); font-size:12.5p
   <a href="#live">🕉️ हामी कहाँ छौँ</a>
   <a href="#manvmap">🌊 मन्वन्तर नक्सा</a>
   <a href="#zoom-chatur">⏳ चतुर्युग</a>
+  <a href="#clock">🕐 ब्रह्माण्डीय घडी</a>
+  <a href="#pralaya">🌊 सृष्टि/प्रलय</a>
   <a href="#scrubber">🎚️ समय खोजकर्ता</a>
   <a href="#hierarchy">🔱 तहगत संरचना</a>
   <a href="#pyramid">📐 पूर्ण पिरामिड</a>
   <a href="#converter">🔁 एकाइ परिवर्तक</a>
   <a href="#table">📊 तालिका</a>
-  <a href="#science">🔬 विज्ञान तुलना</a>
+  <a href="#science">🔬 वैज्ञानिक तुलना</a>
   <a href="#glossary">📖 शब्दावली</a>
   <a href="#faq">❓ प्रश्नोत्तर</a>
 </div></nav>
@@ -186,7 +188,7 @@ footer{padding:40px 20px; text-align:center; color:var(--muted); font-size:12.5p
 <header class="hero">
   <div class="eyebrow">🕉️ ब्रह्माको ५१ औँ वर्ष · द्वितीय परार्ध · श्वेतवाराह कल्प · दिन १</div>
   <h1 class="title">ब्रह्माण्डको काल-चक्रमा<br><em>हामी ठ्याक्कै कहाँ छौँ?</em></h1>
-  <p class="sub">ब्रह्माको सम्पूर्ण १०० वर्षको आयुदेखि लिएर हालको क्षणसम्म — परार्ध, कल्प, मन्वन्तर, चतुर्युग हुँदै कलियुगको एक-एक वर्षसम्मको पूर्ण, गणितीय र अन्तरक्रियात्मक (interactive) मापन।</p>
+  <p class="sub">ब्रह्माको सम्पूर्ण १०० वर्षको आयुदेखि लिएर हालको क्षणसम्म — परार्ध, कल्प, मन्वन्तर, चतुर्युग हुँदै कलियुगको एक-एक वर्षसम्मको पूर्ण, गणितीय र अन्तरक्रियात्मक मापन।</p>
   <div class="unit-toggle">
     <button id="btn-dev" class="active" onclick="setUnit('dev')">☀️ देव वर्ष</button>
     <button id="btn-human" onclick="setUnit('human')">🌍 मानव वर्ष</button>
@@ -196,7 +198,7 @@ footer{padding:40px 20px; text-align:center; color:var(--muted); font-size:12.5p
 <!-- ============ LEVEL 0: BRAHMA'S FULL LIFE ============ -->
 <section id="brahma-life">
   <div class="sec-head">
-    <span class="sec-tag">तह ०  ·  सबैभन्दा ठूलो स्केल</span>
+    <span class="sec-tag">तह: आधारभूत  ·  सबैभन्दा ठूलो स्केल</span>
     <h2 class="sec-title">ब्रह्माको सम्पूर्ण जीवनकाल (१०० वर्ष)</h2>
     <p class="sec-desc">ब्रह्माको १ वर्ष = ३६० दिन-रात (अहोरात्र)। १०० वर्षको सम्पूर्ण आयु = ३,११,०४,०० करोड मानव वर्ष (३११.०४ खर्ब वर्ष)। हामी अहिले यसको ठीक मध्यबिन्दु पार गरेर दोस्रो परार्धको पहिलो दिनमा छौँ।</p>
   </div>
@@ -299,6 +301,63 @@ footer{padding:40px 20px; text-align:center; color:var(--muted); font-size:12.5p
       </div>
       <div class="track" style="height:14px; margin-top:10px"><div class="fill" id="kaliFill" style="height:100%"></div></div>
       <div class="ticks"><span id="kaliPct1">—</span><span id="kaliPct2">—</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSMIC CLOCK (NEW) ============ -->
+<section id="clock">
+  <div class="sec-head">
+    <span class="sec-tag">थप जानकारी · नयाँ</span>
+    <h2 class="sec-title">ब्रह्माको १२-घण्टे ब्रह्माण्डीय घडी</h2>
+    <p class="sec-desc">कल्पलाई (ब्रह्माको दिनको सृष्टि-भाग मात्र, अर्थात् दिनको १२ घण्टा) एउटा सामान्य घडीसँग तुलना गर्ने हो भने, हामी अहिले यो घडीको ठ्याक्कै यही समयमा उभिएका छौँ:</p>
+  </div>
+  <div class="card">
+    <div class="grid2" style="align-items:center">
+      <div style="display:flex; justify-content:center">
+        <svg id="clockSvg" viewBox="0 0 220 220" width="220" height="220">
+          <circle cx="110" cy="110" r="102" fill="none" stroke="var(--border)" stroke-width="2"/>
+          <circle cx="110" cy="110" r="102" fill="rgba(79,195,247,0.05)"/>
+          <g id="clockTicks"></g>
+          <line id="hourHand" x1="110" y1="110" x2="110" y2="66" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
+          <line id="minHand" x1="110" y1="110" x2="110" y2="42" stroke="var(--accent2)" stroke-width="3.5" stroke-linecap="round"/>
+          <line id="secHand" x1="110" y1="110" x2="110" y2="34" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="110" cy="110" r="5" fill="var(--text)"/>
+        </svg>
+      </div>
+      <div>
+        <span class="k" style="display:block; margin-bottom:4px">वर्तमान ब्रह्माण्डीय समय (कल्प-घडी)</span>
+        <div id="clockDigital" style="font-family:'Inter',monospace; font-size:34px; font-weight:800; color:var(--accent); letter-spacing:1px">—</div>
+        <p style="color:var(--muted); font-size:13.5px; margin-top:10px">घण्टा ५ ले ७ औँ (वैवस्वत) मन्वन्तर देखाउँछ; मिनेट ~२८ ले हाल चलिरहेको २८ औँ चतुर्युगलाई जनाउँछ।</p>
+        <div class="grid3" style="margin-top:16px">
+          <div class="stat" style="border-color:var(--accent)"><span class="k">१ घण्टा =</span><span class="v" style="font-size:14px">१० लाख देव वर्ष</span></div>
+          <div class="stat" style="border-color:var(--accent2)"><span class="k">१ मिनेट =</span><span class="v" style="font-size:14px">६० लाख मानव वर्ष</span></div>
+          <div class="stat" style="border-color:var(--rose)"><span class="k">१ सेकेन्ड =</span><span class="v" style="font-size:14px">१ लाख मानव वर्ष</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREATION vs DISSOLUTION (NEW) ============ -->
+<section id="pralaya">
+  <div class="sec-head">
+    <span class="sec-tag">थप जानकारी · नयाँ</span>
+    <h2 class="sec-title">सृष्टि र प्रलयका तीन फरक तह</h2>
+    <p class="sec-desc">"विनाश" भन्ने शब्द तहअनुसार फरक-फरक अर्थमा प्रयोग हुन्छ। तल्लो तहबाट माथिल्लो तहसम्म जाँदा विनाशको दायरा र गहिराइ बढ्दै जान्छ।</p>
+  </div>
+  <div class="grid3">
+    <div class="card" style="border-color:color-mix(in srgb, var(--accent2) 40%, var(--border))">
+      <b style="color:var(--accent2)">१. युग परिवर्तन</b>
+      <p style="color:var(--muted); font-size:13.5px; margin-top:8px">कुनै भौतिक विनाश हुँदैन। केवल मानव चेतना, धर्म र सामाजिक व्यवस्थामा मात्र परिवर्तन आउँछ (जस्तै: कलियुगबाट फेरि सत्ययुगमा फर्कँदा)।</p>
+    </div>
+    <div class="card" style="border-color:color-mix(in srgb, var(--emerald) 40%, var(--border))">
+      <b style="color:var(--emerald)">२. नैमित्तिक प्रलय</b>
+      <p style="color:var(--muted); font-size:13.5px; margin-top:8px">प्रत्येक कल्पको अन्त्यमा (ब्रह्माको रातमा) हुन्छ। पृथ्वी-सतह र जैविक सृष्टि (जीव-जगत) लय हुन्छ, तर पञ्चमहाभूत (आधारभूत भौतिक तत्व) कायमै रहन्छन् — अर्को कल्पको सृष्टिको जग बन्छ।</p>
+    </div>
+    <div class="card" style="border-color:color-mix(in srgb, var(--rose) 40%, var(--border))">
+      <b style="color:var(--rose)">३. महाप्रलय</b>
+      <p style="color:var(--muted); font-size:13.5px; margin-top:8px">ब्रह्माका पूरा १०० वर्ष (सम्पूर्ण जीवनकाल) समाप्त भएपछि मात्र हुन्छ। सम्पूर्ण ब्रह्माण्डीय पदार्थको पूर्ण विघटन — सबैभन्दा ठूलो र गहिरो विनाश।</p>
     </div>
   </div>
 </section>
@@ -753,6 +812,34 @@ function renderFAQ(){
   document.getElementById('faqList').innerHTML = FAQ.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('');
 }
 
+/* ================= COSMIC CLOCK (12-hour Kalpa clock) ================= */
+function buildClockTicks(){
+  const g = document.getElementById('clockTicks');
+  let html='';
+  for(let i=0;i<12;i++){
+    const ang = i*30*Math.PI/180;
+    const x1=110+92*Math.sin(ang), y1=110-92*Math.cos(ang);
+    const x2=110+102*Math.sin(ang), y2=110-102*Math.cos(ang);
+    html += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="var(--muted)" stroke-width="2"/>`;
+  }
+  g.innerHTML = html;
+}
+function renderClock(){
+  const pct = ELAPSED_IN_KALPA/KALPA_DEV; // 0..1 across the 12-hour daytime dial
+  const totalSeconds = pct*12*3600;
+  let hh = Math.floor(totalSeconds/3600);
+  let mm = Math.floor((totalSeconds%3600)/60);
+  let ss = Math.floor(totalSeconds%60);
+  const pad2 = n => (n<10? '0'+n : ''+n);
+  document.getElementById('clockDigital').innerText = toNep(pad2(hh),0)+':'+toNep(pad2(mm),0)+':'+toNep(pad2(ss),0);
+  const hourAngle = ((hh%12) + mm/60)*30;
+  const minAngle = mm*6 + ss/60*6;
+  const secAngle = ss*6;
+  document.getElementById('hourHand').setAttribute('transform', `rotate(${hourAngle} 110 110)`);
+  document.getElementById('minHand').setAttribute('transform', `rotate(${minAngle} 110 110)`);
+  document.getElementById('secHand').setAttribute('transform', `rotate(${secAngle} 110 110)`);
+}
+
 /* ================= STAR / GALAXY CANVAS ================= */
 function initSky(){
   const c = document.getElementById('sky'); const ctx = c.getContext('2d');
@@ -822,12 +909,14 @@ function renderAll(){
   buildPyramid();
   renderTable();
   inspect('manv',7);
+  renderClock();
 }
 
 window.onload = function(){
   initSky();
   renderSegbar();
   buildTabs();
+  buildClockTicks();
   renderGlossary();
   renderFAQ();
   doConvert();
